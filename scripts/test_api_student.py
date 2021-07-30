@@ -723,14 +723,14 @@ class TestApiStudent(unittest.TestCase):
 
         try:
             # 课堂学情-获取每次测验成绩
-            e_time = datetime.datetime.now()
-            end_time = e_time.strftime("%Y-%m-%d")  # 结束时间
-            s_time = e_time - datetime.timedelta(days=30)
-            start_time = s_time.strftime("%Y-%m-%d")  # 开始时间
+            # s_time = datetime.datetime.now()
+            # start_time = s_time.strftime("%Y-%m-%d")  # 开始时间
+            # e_time = s_time + datetime.timedelta(days=30)
+            # end_time = e_time.strftime("%Y-%m-%d")  # 结束时间
             data_h1 = {
                         "cou_id": my_variable.cou_id,
-                        "startTime": start_time,
-                        "endTime": end_time
+                        "startTime": "2020-07-01",
+                        "endTime": "2021-07-01"
                     }
             url_h1 = base_url + "/Api/IRSRecord/GetTimeInterval?" + urlencode(data_h1)
             try:
@@ -794,8 +794,8 @@ class TestApiStudent(unittest.TestCase):
             data_h5 = {
                         "cou_id": my_variable.cou_id,
                         "per_id": my_variable.user_id,
-                        "startTime": start_time,
-                        "endTime": end_time
+                        "startTime": "2020-07-01",
+                        "endTime": "2021-07-01"
                     }
             url_h5 = base_url + "/Api/IRSRecord/GetHistoryTest?" + urlencode(data_h5)
             try:
